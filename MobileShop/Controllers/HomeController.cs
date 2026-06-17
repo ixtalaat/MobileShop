@@ -1,14 +1,32 @@
 using Microsoft.AspNetCore.Mvc;
 using MobileShop.Models;
+using MobileShop.Services;
+using MobileShop.ViewModels;
 using System.Diagnostics;
 
 namespace MobileShop.Controllers;
 
 public class HomeController : Controller
 {
-    public IActionResult Index()
+    private readonly IProductService _productService;
+    private readonly ILogger<HomeController> _logger;
+
+    public HomeController(IProductService productService, ILogger<HomeController> logger)
     {
-        return View();
+        _productService = productService;
+        _logger = logger;
+    }
+
+    public async Task<IActionResult> Index()
+    {
+        var viewModel = new HomeViewModel
+        {
+            FeaturedProducts = await _productService.GetFeaturedProductsAsync(8),
+            NewArrivals = await _productService.GetNewArrivalsAsync(8),
+            Bestsellers = await _productService.GetBestsellersAsync(8),
+            Brands = await _productService.GetBrandsAsync(6)
+        };
+        return View(viewModel);
     }
 
     public IActionResult Privacy()

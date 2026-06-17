@@ -55,7 +55,7 @@ public class DbInitializer
                 FirstName = "System",
                 LastName = "Administrator",
                 EmailConfirmed = true,
-                PhoneNumber = "+201126342642",
+                PhoneNumber = "+01100000000",
                 CreatedAt = new DateTime(2026, 6, 1),
             };
 
@@ -75,13 +75,12 @@ public class DbInitializer
             {
                 new Product
                 {
-                    Id = 1,
                     Name = "iPhone 15 Pro Max",
                     Model = "A2849",
                     Description = "The most advanced iPhone ever with A17 Pro chip, titanium design, and 48MP camera system.",
                     ShortDescription = "A17 Pro chip, 48MP camera, titanium design",
-                    OriginalPrice = 159900,
-                    SalePrice = 149900,
+                    OriginalPrice = 70900,
+                    SalePrice = 66900,
                     StockQuantity = 50,
                     MainImageUrl = "/images/products/iphone-15-pro-max.jpg",
                     IsFeatured = true,
@@ -100,18 +99,16 @@ public class DbInitializer
                         new ProductSpecification { Name = "OS", Value = "iOS 17", GroupName = "Software" },
                         new ProductSpecification { Name = "5G", Value = "Yes", GroupName = "Connectivity" },
                         new ProductSpecification { Name = "Weight", Value = "221g", GroupName = "Physical" }
-                    },
-                    CreatedAt = new DateTime(2026, 6, 1)
+                    }
                 },
                 new Product
                 {
-                    Id = 2,
                     Name = "Samsung Galaxy S24 Ultra",
                     Model = "SM-S928B",
                     Description = "Galaxy AI is here. With AI-powered features, 200MP camera, and S Pen functionality.",
                     ShortDescription = "Galaxy AI, 200MP camera, S Pen included",
-                    OriginalPrice = 129999,
-                    SalePrice = 119999,
+                    OriginalPrice = 66999,
+                    SalePrice = 59999,
                     StockQuantity = 45,
                     MainImageUrl = "/images/products/galaxy-s24-ultra.jpg",
                     IsFeatured = true,
@@ -130,19 +127,16 @@ public class DbInitializer
                         new ProductSpecification { Name = "OS", Value = "Android 14 (One UI 6.1)", GroupName = "Software" },
                         new ProductSpecification { Name = "5G", Value = "Yes", GroupName = "Connectivity" },
                         new ProductSpecification { Name = "Weight", Value = "232g", GroupName = "Physical" }
-                    },
-                    CreatedAt = new DateTime(2026, 6, 1)
-
+                    }
                 },
                 new Product
                 {
-                    Id = 3,
                     Name = "Xiaomi 14 Ultra",
                     Model = "24031PN0DC",
                     Description = "Leica optics, Snapdragon 8 Gen 3, and 5300mAh battery with 90W fast charging.",
                     ShortDescription = "Leica camera, 90W fast charging, flagship performance",
-                    OriginalPrice = 99999,
-                    SalePrice = 89999,
+                    OriginalPrice = 77999,
+                    SalePrice = 67999,
                     StockQuantity = 30,
                     MainImageUrl = "/images/products/xiaomi-14-ultra.jpg",
                     IsFeatured = true,
@@ -161,12 +155,10 @@ public class DbInitializer
                         new ProductSpecification { Name = "OS", Value = "HyperOS (Android 14)", GroupName = "Software" },
                         new ProductSpecification { Name = "5G", Value = "Yes", GroupName = "Connectivity" },
                         new ProductSpecification { Name = "Weight", Value = "219.8g", GroupName = "Physical" }
-                    },
-                    CreatedAt = new DateTime(2026, 6, 1)
+                    }
                 },
                 new Product
                 {
-                    Id = 4,
                     Name = "OnePlus 12",
                     Model = "CPH2581",
                     Description = "Smooth beyond belief with 120Hz ProXDR display and Hasselblad camera system.",
@@ -190,18 +182,16 @@ public class DbInitializer
                         new ProductSpecification { Name = "OS", Value = "OxygenOS 14 (Android 14)", GroupName = "Software" },
                         new ProductSpecification { Name = "5G", Value = "Yes", GroupName = "Connectivity" },
                         new ProductSpecification { Name = "Weight", Value = "220g", GroupName = "Physical" }
-                    },
-                    CreatedAt = new DateTime(2026, 6, 1)
+                    }
                 },
                 new Product
                 {
-                    Id = 5,
                     Name = "Google Pixel 8 Pro",
                     Model = "GC3VE",
                     Description = "The best of Google with AI-powered features and the best camera on a Pixel.",
                     ShortDescription = "Google AI, best Pixel camera, 7 years updates",
-                    OriginalPrice = 106900,
-                    SalePrice = 99999,
+                    OriginalPrice = 66900,
+                    SalePrice = 58999,
                     StockQuantity = 25,
                     MainImageUrl = "/images/products/pixel-8-pro.jpg",
                     IsNewArrival = true,
@@ -219,47 +209,16 @@ public class DbInitializer
                         new ProductSpecification { Name = "OS", Value = "Android 14", GroupName = "Software" },
                         new ProductSpecification { Name = "5G", Value = "Yes", GroupName = "Connectivity" },
                         new ProductSpecification { Name = "Weight", Value = "213g", GroupName = "Physical" }
-                    },
-                    CreatedAt = new DateTime(2026, 6, 1)
+                    }
                 },
                 new Product
                 {
-                    Id = 6,
-                    Name = "iPhone 15",
-                    Model = "A3092",
-                    Description = "Dynamic Island, 48MP Main camera, and USB-C. A powerful upgrade.",
-                    ShortDescription = "Dynamic Island, 48MP camera, USB-C",
-                    OriginalPrice = 79900,
-                    SalePrice = 74900,
-                    StockQuantity = 60,
-                    MainImageUrl = "/images/products/iphone-15.jpg",
-                    IsBestseller = true,
-                    CategoryId = 1,
-                    BrandId = 1,
-                    Specifications = new List<ProductSpecification>
-                    {
-                        new ProductSpecification { Name = "Display", Value = "6.1\" Super Retina XDR OLED", GroupName = "Display" },
-                        new ProductSpecification { Name = "Processor", Value = "A16 Bionic", GroupName = "Performance" },
-                        new ProductSpecification { Name = "RAM", Value = "6GB", GroupName = "Performance" },
-                        new ProductSpecification { Name = "Storage", Value = "128GB", GroupName = "Storage" },
-                        new ProductSpecification { Name = "Rear Camera", Value = "48MP Main + 12MP Ultra Wide", GroupName = "Camera" },
-                        new ProductSpecification { Name = "Front Camera", Value = "12MP TrueDepth", GroupName = "Camera" },
-                        new ProductSpecification { Name = "Battery", Value = "3349 mAh", GroupName = "Battery" },
-                        new ProductSpecification { Name = "OS", Value = "iOS 17", GroupName = "Software" },
-                        new ProductSpecification { Name = "5G", Value = "Yes", GroupName = "Connectivity" },
-                        new ProductSpecification { Name = "Weight", Value = "171g", GroupName = "Physical" }
-                    },
-                    CreatedAt = new DateTime(2026, 6, 1)
-                },
-                new Product
-                {
-                    Id = 7,
                     Name = "Samsung Galaxy A54 5G",
                     Model = "SM-A546E",
                     Description = "Awesome screen, awesome camera, awesome durability at a great price.",
                     ShortDescription = "120Hz AMOLED, 50MP camera, IP67 waterproof",
-                    OriginalPrice = 38999,
-                    SalePrice = 32999,
+                    OriginalPrice = 19999,
+                    SalePrice = 17999,
                     StockQuantity = 80,
                     MainImageUrl = "/images/products/galaxy-a54.jpg",
                     IsFeatured = true,
@@ -277,12 +236,10 @@ public class DbInitializer
                         new ProductSpecification { Name = "OS", Value = "Android 14 (One UI 6)", GroupName = "Software" },
                         new ProductSpecification { Name = "5G", Value = "Yes", GroupName = "Connectivity" },
                         new ProductSpecification { Name = "Weight", Value = "202g", GroupName = "Physical" }
-                    },
-                    CreatedAt = new DateTime(2026, 6, 1)
+                    }
                 },
                 new Product
                 {
-                    Id = 8,
                     Name = "Realme GT 5 Pro",
                     Model = "RMX3888",
                     Description = "Flagship performance with Snapdragon 8 Gen 3 and 5400mAh battery.",
@@ -306,38 +263,9 @@ public class DbInitializer
                         new ProductSpecification { Name = "OS", Value = "realme UI 5.0 (Android 14)", GroupName = "Software" },
                         new ProductSpecification { Name = "5G", Value = "Yes", GroupName = "Connectivity" },
                         new ProductSpecification { Name = "Weight", Value = "218g", GroupName = "Physical" }
-                    },
-                    CreatedAt = new DateTime(2026, 6, 1)
+                    }
                 },
-                new Product
-                {
-                    Id = 9,
-                    Name = "Oppo Find X6 Pro",
-                    Model = "CPH2463",
-                    Description = "Ultra premium design with Snapdragon 8 Gen 3 and Hasselblad camera system.",
-                    ShortDescription = "Hasselblad camera, 120W charging, LTPO AMOLED",
-                    OriginalPrice = 79999,
-                    SalePrice = 74999,
-                    StockQuantity = 20,
-                    MainImageUrl = "/images/products/oppo-find-x6-pro.jpg",
-                    IsFeatured = true,
-                    CategoryId = 1,
-                    BrandId = 7,
-                    Specifications = new List<ProductSpecification>
-                    {
-                        new ProductSpecification { Name = "Display", Value = "6.82\" LTPO AMOLED 120Hz", GroupName = "Display" },
-                        new ProductSpecification { Name = "Processor", Value = "Snapdragon 8 Gen 3", GroupName = "Performance" },
-                        new ProductSpecification { Name = "RAM", Value = "12GB", GroupName = "Performance" },
-                        new ProductSpecification { Name = "Storage", Value = "256GB", GroupName = "Storage" },
-                        new ProductSpecification { Name = "Rear Camera", Value = "50MP Main + 50MP Telephoto + 50MP Ultra Wide", GroupName = "Camera" },
-                        new ProductSpecification { Name = "Front Camera", Value = "32MP", GroupName = "Camera" },
-                        new ProductSpecification { Name = "Battery", Value = "5000 mAh", GroupName = "Battery" },
-                        new ProductSpecification { Name = "OS", Value = "ColorOS 14 (Android 14)", GroupName = "Software" },
-                        new ProductSpecification { Name = "5G", Value = "Yes", GroupName = "Connectivity" },
-                        new ProductSpecification { Name = "Weight", Value = "219g", GroupName = "Physical" }
-                    },
-                    CreatedAt = new DateTime(2026, 6, 1)
-                }
+                
             };
 
         await context.Products.AddRangeAsync(products);

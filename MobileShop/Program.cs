@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MobileShop.Data;
 using MobileShop.Models;
+using MobileShop.Services;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -47,6 +48,8 @@ builder.Services.AddSession(options =>
 var mappingConfig = TypeAdapterConfig.GlobalSettings;
 mappingConfig.Scan(Assembly.GetExecutingAssembly());
 builder.Services.AddSingleton<IMapper>(new Mapper(mappingConfig));
+
+builder.Services.AddScoped<IProductService, MobileShop.Services.ProductService>();
 
 
 var app = builder.Build();
