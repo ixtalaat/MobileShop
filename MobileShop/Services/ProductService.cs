@@ -13,6 +13,12 @@ public interface IProductService
     Task<List<Brand>> GetBrandsAsync(int count = 6);
     // Asynchronously gets a filtered, sorted, and paginated list of products
     Task<ProductListViewModel> GetProductsAsync(ProductListViewModel filter);
+    // Fetches a single product by its primary key
+    Task<Product?> GetProductByIdAsync(int id);
+
+    // Fetches a list of similar products based on Category or Brand
+    // Default count is set to 4 for a standard UI row
+    Task<List<Product>> GetRelatedProductsAsync(int productId, int count = 4);
 }
 
 public class ProductService : IProductService
@@ -114,5 +120,36 @@ public class ProductService : IProductService
         filter.Brands = await _context.Brands.Where(b => b.IsActive).ToListAsync();
 
         return filter;
+    }
+    public async Task<Product?> GetProductByIdAsync(int id)
+    {
+        // Fetches the product with all its related details
+        return await _context.Products
+            .Include(p => p.Brand)
+            .Include(p => p.Category)
+            .Include(p => p.ProductImages)
+            .Include(p => p.Specifications)
+            .Include(p => p.Reviews)
+                .ThenInclude(r => r.User) // Deep loading the user who wrote the review
+            .FirstOrDefaultAsync(p => p.Id == id && p.IsActive);
+    }
+
+    public async Task<List<Product>> GetRelatedProductsAsync(int productId, int count = 4)
+    {
+        // 1. Fetch the base product to get its Brand and Category
+        var product = await _context.Products.FindAsync(productId);
+
+        // Return empty list if product doesn't exist
+        if (product == null) return new List<Product>();
+
+        // 2. Query for similar products
+        return await _context.Products
+            .Include(p => p.Brand)
+            .Where(p => p.Id != productId &&      // Exclude the current product
+                        (p.BrandId == product.BrandId || p.CategoryId == product.CategoryId) &&
+                        p.IsActive)               // Only show active items
+            .OrderBy(x => Guid.NewGuid())        // Optional: Randomize the results
+            .Take(count)                          // Limit the result set
+            .ToListAsync();
     }
 }
